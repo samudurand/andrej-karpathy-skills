@@ -31,7 +31,19 @@ Before implementing:
 
 Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
 
-## 3. Surgical Changes
+## 3. Response Brevity
+
+**Match output length to task complexity. Don't narrate what the code already shows.**
+
+- For simple edits: return the changed code, optionally one line of context. No explanation unless something is non-obvious.
+- Don't summarize what you just did ("I've updated the function to..."). The diff is the summary.
+- Don't add a "Next steps" or "Let me know if..." closing. Stop when the task is done.
+- Don't restate the user's request back to them before answering.
+- Verbose explanations, reasoning walkthroughs, and detailed recaps only when explicitly asked ("explain this", "walk me through", "why did you...").
+
+The test: Could you remove the prose and lose nothing the code doesn't already communicate? If yes, remove it.
+
+## 4. Surgical Changes
 
 **Touch only what you must. Clean up only your own mess.**
 
@@ -47,7 +59,7 @@ When your changes create orphans:
 
 The test: Every changed line should trace directly to the user's request.
 
-## 4. Goal-Driven Execution
+## 5. Goal-Driven Execution
 
 **Define success criteria. Loop until verified.**
 
